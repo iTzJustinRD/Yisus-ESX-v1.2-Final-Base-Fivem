@@ -1,59 +1,15 @@
--- phpMyAdmin SQL Dump
--- version 5.0.2
--- https://www.phpmyadmin.net/
---
--- Servidor: 127.0.0.1
--- Tiempo de generación: 23-07-2020 a las 21:38:50
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.5
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Base de datos: `es_extended`
---
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `addon_account`
---
-
 CREATE TABLE `addon_account` (
   `name` varchar(60) NOT NULL,
   `label` varchar(100) NOT NULL,
   `shared` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
---
--- Volcado de datos para la tabla `addon_account`
---
-
 INSERT INTO `addon_account` (`name`, `label`, `shared`) VALUES
-('club_ballas_bank', 'Ballas', 1),
-('club_ballas_black', 'Ballas Black', 1),
-('club_ballas_priv', 'Ballas Priv', 1),
-('club_ballas_pub', 'Ballas Pub', 1),
 ('housing_black_money', 'Dinero Negro de las Casas', 0),
 ('society_ambulance', 'EMS', 1),
 ('society_mechanic', 'Mecánico', 1),
 ('society_police', 'LSPD', 1),
-('society_taxi', 'Taxi', 1),
-('society_tendero', 'tendero', 1);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `addon_account_data`
---
+('society_taxi', 'Taxi', 1);
 
 CREATE TABLE `addon_account_data` (
   `id` int(11) NOT NULL,
@@ -62,25 +18,12 @@ CREATE TABLE `addon_account_data` (
   `owner` varchar(40) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
---
--- Volcado de datos para la tabla `addon_account_data`
---
-
 INSERT INTO `addon_account_data` (`id`, `account_name`, `money`, `owner`) VALUES
 (2, 'society_police', 70, NULL),
 (3, 'society_ambulance', 0, NULL),
-(6, 'club_ballas_pub', 0, NULL),
-(7, 'club_ballas_priv', 0, NULL),
-(8, 'club_ballas_black', 0, NULL),
-(9, 'club_ballas_bank', 438, NULL),
 (10, 'society_mechanic', 856972, NULL),
 (11, 'society_taxi', 0, NULL),
 (12, 'society_tendero', 77, NULL);
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `addon_inventory`
---
 
 CREATE TABLE `addon_inventory` (
   `name` varchar(60) NOT NULL,
@@ -88,22 +31,12 @@ CREATE TABLE `addon_inventory` (
   `shared` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
---
--- Volcado de datos para la tabla `addon_inventory`
---
-
 INSERT INTO `addon_inventory` (`name`, `label`, `shared`) VALUES
 ('housing', 'Casas', 0),
 ('society_ambulance', 'EMS', 1),
 ('society_mechanic', 'Mecánico', 1),
 ('society_police', 'LSPD', 1),
-('society_taxi', 'Taxi', 1),
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `addon_inventory_items`
---
+('society_taxi', 'Taxi', 1);
 
 CREATE TABLE `addon_inventory_items` (
   `id` int(11) NOT NULL,
@@ -113,21 +46,11 @@ CREATE TABLE `addon_inventory_items` (
   `owner` varchar(40) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
---
--- Volcado de datos para la tabla `addon_inventory_items`
---
-
 INSERT INTO `addon_inventory_items` (`id`, `inventory_name`, `name`, `count`, `owner`) VALUES
 (2, 'society_taxi', 'bread', 0, NULL),
 (3, 'society_taxi', 'gym_membership', 1, NULL),
 (5, 'society_police', 'bread', 5, NULL),
 (10, 'society_ambulance', 'bread', 0, NULL);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `billing`
---
 
 CREATE TABLE `billing` (
   `id` int(11) NOT NULL,
@@ -139,43 +62,19 @@ CREATE TABLE `billing` (
   `amount` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `bought_houses`
---
-
 CREATE TABLE `bought_houses` (
   `houseid` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `characters_motels`
---
 
 CREATE TABLE `characters_motels` (
   `userIdentifier` varchar(50) NOT NULL,
   `motelData` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `characters_storages`
---
-
 CREATE TABLE `characters_storages` (
   `storageId` varchar(255) NOT NULL,
   `storageData` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `criminal_records`
---
 
 CREATE TABLE `criminal_records` (
   `id` int(11) NOT NULL,
@@ -187,26 +86,13 @@ CREATE TABLE `criminal_records` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `datastore`
---
-
 CREATE TABLE `datastore` (
   `name` varchar(60) NOT NULL,
   `label` varchar(100) NOT NULL,
   `shared` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
---
--- Volcado de datos para la tabla `datastore`
---
-
 INSERT INTO `datastore` (`name`, `label`, `shared`) VALUES
-('club_ballas', 'Banda Ballas', 1),
-('club_ballas_priv', 'Ballas Privado', 1),
-('club_ballas_pub', 'Ballas Público', 1),
 ('housing', 'Casas', 0),
 ('property', 'Ropas', 0),
 ('society_ambulance', 'EMS', 1),
@@ -219,24 +105,12 @@ INSERT INTO `datastore` (`name`, `label`, `shared`) VALUES
 ('user_mask', 'Mask', 0),
 ('user_vestimenta', 'Vestimenta', 0);
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `datastore_data`
---
-
 CREATE TABLE `datastore_data` (
   `id` int(11) NOT NULL,
   `name` varchar(60) NOT NULL,
   `owner` varchar(40) DEFAULT NULL,
   `data` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `epc_bolos`
---
 
 CREATE TABLE `epc_bolos` (
   `id` int(11) NOT NULL,
@@ -248,12 +122,6 @@ CREATE TABLE `epc_bolos` (
   `created_at` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `epc_notes`
---
-
 CREATE TABLE `epc_notes` (
   `id` int(11) NOT NULL,
   `title` varchar(250) NOT NULL,
@@ -262,22 +130,12 @@ CREATE TABLE `epc_notes` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `fine_types`
---
-
 CREATE TABLE `fine_types` (
   `id` int(11) NOT NULL,
   `label` varchar(255) DEFAULT NULL,
   `amount` int(11) DEFAULT NULL,
   `category` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `fine_types`
---
 
 INSERT INTO `fine_types` (`id`, `label`, `amount`, `category`) VALUES
 (1, 'Mal uso del claxon', 250, 0),
@@ -333,12 +191,6 @@ INSERT INTO `fine_types` (`id`, `label`, `amount`, `category`) VALUES
 (51, 'Homicidio involuntario', 100000, 3),
 (52, 'Fraude', 10000, 2);
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `items`
---
-
 CREATE TABLE `items` (
   `name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `label` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
@@ -347,10 +199,6 @@ CREATE TABLE `items` (
   `can_remove` tinyint(1) NOT NULL DEFAULT 1,
   `price` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
-
---
--- Volcado de datos para la tabla `items`
---
 
 INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`, `price`) VALUES
 ('WEAPON_ADVANCEDRIFLE', 'Advanced Rifle', 1, 0, 1, 1),
@@ -458,21 +306,11 @@ INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`, `price`) V
 ('water', 'Agua', 1, 0, 1, 1),
 ('wine', 'Vino', 2, 0, 1, 1);
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `jobs`
---
-
 CREATE TABLE `jobs` (
   `name` varchar(50) NOT NULL,
   `label` varchar(50) DEFAULT NULL,
   `whitelisted` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
-
---
--- Volcado de datos para la tabla `jobs`
---
 
 INSERT INTO `jobs` (`name`, `label`, `whitelisted`) VALUES
 ('ambulance', 'LSFD', 1),
@@ -480,12 +318,6 @@ INSERT INTO `jobs` (`name`, `label`, `whitelisted`) VALUES
 ('police', 'LSPD', 0),
 ('taxi', 'Taxi', 1),
 ('unemployed', 'En paro', 0);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `job_grades`
---
 
 CREATE TABLE `job_grades` (
   `id` int(11) NOT NULL,
@@ -497,10 +329,6 @@ CREATE TABLE `job_grades` (
   `skin_male` longtext NOT NULL,
   `skin_female` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
-
---
--- Volcado de datos para la tabla `job_grades`
---
 
 INSERT INTO `job_grades` (`id`, `job_name`, `grade`, `name`, `label`, `salary`, `skin_male`, `skin_female`) VALUES
 (1, 'unemployed', 0, 'unemployed', 'Desempleado', 200, '{}', '{}'),
@@ -527,31 +355,15 @@ INSERT INTO `job_grades` (`id`, `job_name`, `grade`, `name`, `label`, `salary`, 
 (1031, 'taxi', 1, 'novice', 'Novato', 24, '{\"hair_2\":0,\"hair_color_2\":0,\"torso_1\":32,\"bags_1\":0,\"helmet_2\":0,\"chain_2\":0,\"eyebrows_3\":0,\"makeup_3\":0,\"makeup_2\":0,\"tshirt_1\":31,\"makeup_1\":0,\"bags_2\":0,\"makeup_4\":0,\"eyebrows_4\":0,\"chain_1\":0,\"lipstick_4\":0,\"bproof_2\":0,\"hair_color_1\":0,\"decals_2\":0,\"pants_2\":0,\"age_2\":0,\"glasses_2\":0,\"ears_2\":0,\"arms\":27,\"lipstick_1\":0,\"ears_1\":-1,\"mask_2\":0,\"sex\":0,\"lipstick_3\":0,\"helmet_1\":-1,\"shoes_2\":0,\"beard_2\":0,\"beard_1\":0,\"lipstick_2\":0,\"beard_4\":0,\"glasses_1\":0,\"bproof_1\":0,\"mask_1\":0,\"decals_1\":1,\"hair_1\":0,\"eyebrows_2\":0,\"beard_3\":0,\"age_1\":0,\"tshirt_2\":0,\"skin\":0,\"torso_2\":0,\"eyebrows_1\":0,\"face\":0,\"shoes_1\":10,\"pants_1\":24}', '{\"hair_2\":0,\"hair_color_2\":0,\"torso_1\":57,\"bags_1\":0,\"helmet_2\":0,\"chain_2\":0,\"eyebrows_3\":0,\"makeup_3\":0,\"makeup_2\":0,\"tshirt_1\":38,\"makeup_1\":0,\"bags_2\":0,\"makeup_4\":0,\"eyebrows_4\":0,\"chain_1\":0,\"lipstick_4\":0,\"bproof_2\":0,\"hair_color_1\":0,\"decals_2\":0,\"pants_2\":1,\"age_2\":0,\"glasses_2\":0,\"ears_2\":0,\"arms\":21,\"lipstick_1\":0,\"ears_1\":-1,\"mask_2\":0,\"sex\":1,\"lipstick_3\":0,\"helmet_1\":-1,\"shoes_2\":0,\"beard_2\":0,\"beard_1\":0,\"lipstick_2\":0,\"beard_4\":0,\"glasses_1\":5,\"bproof_1\":0,\"mask_1\":0,\"decals_1\":1,\"hair_1\":0,\"eyebrows_2\":0,\"beard_3\":0,\"age_1\":0,\"tshirt_2\":0,\"skin\":0,\"torso_2\":0,\"eyebrows_1\":0,\"face\":0,\"shoes_1\":49,\"pants_1\":11}'),
 (1032, 'taxi', 2, 'experimente', 'Experimentado', 36, '{\"hair_2\":0,\"hair_color_2\":0,\"torso_1\":26,\"bags_1\":0,\"helmet_2\":0,\"chain_2\":0,\"eyebrows_3\":0,\"makeup_3\":0,\"makeup_2\":0,\"tshirt_1\":57,\"makeup_1\":0,\"bags_2\":0,\"makeup_4\":0,\"eyebrows_4\":0,\"chain_1\":0,\"lipstick_4\":0,\"bproof_2\":0,\"hair_color_1\":0,\"decals_2\":0,\"pants_2\":4,\"age_2\":0,\"glasses_2\":0,\"ears_2\":0,\"arms\":11,\"lipstick_1\":0,\"ears_1\":-1,\"mask_2\":0,\"sex\":0,\"lipstick_3\":0,\"helmet_1\":-1,\"shoes_2\":0,\"beard_2\":0,\"beard_1\":0,\"lipstick_2\":0,\"beard_4\":0,\"glasses_1\":0,\"bproof_1\":0,\"mask_1\":0,\"decals_1\":0,\"hair_1\":0,\"eyebrows_2\":0,\"beard_3\":0,\"age_1\":0,\"tshirt_2\":0,\"skin\":0,\"torso_2\":0,\"eyebrows_1\":0,\"face\":0,\"shoes_1\":10,\"pants_1\":24}', '{\"hair_2\":0,\"hair_color_2\":0,\"torso_1\":57,\"bags_1\":0,\"helmet_2\":0,\"chain_2\":0,\"eyebrows_3\":0,\"makeup_3\":0,\"makeup_2\":0,\"tshirt_1\":38,\"makeup_1\":0,\"bags_2\":0,\"makeup_4\":0,\"eyebrows_4\":0,\"chain_1\":0,\"lipstick_4\":0,\"bproof_2\":0,\"hair_color_1\":0,\"decals_2\":0,\"pants_2\":1,\"age_2\":0,\"glasses_2\":0,\"ears_2\":0,\"arms\":21,\"lipstick_1\":0,\"ears_1\":-1,\"mask_2\":0,\"sex\":1,\"lipstick_3\":0,\"helmet_1\":-1,\"shoes_2\":0,\"beard_2\":0,\"beard_1\":0,\"lipstick_2\":0,\"beard_4\":0,\"glasses_1\":5,\"bproof_1\":0,\"mask_1\":0,\"decals_1\":1,\"hair_1\":0,\"eyebrows_2\":0,\"beard_3\":0,\"age_1\":0,\"tshirt_2\":0,\"skin\":0,\"torso_2\":0,\"eyebrows_1\":0,\"face\":0,\"shoes_1\":49,\"pants_1\":11}'),
 (1033, 'taxi', 3, 'uber', 'Uber', 48, '{\"hair_2\":0,\"hair_color_2\":0,\"torso_1\":26,\"bags_1\":0,\"helmet_2\":0,\"chain_2\":0,\"eyebrows_3\":0,\"makeup_3\":0,\"makeup_2\":0,\"tshirt_1\":57,\"makeup_1\":0,\"bags_2\":0,\"makeup_4\":0,\"eyebrows_4\":0,\"chain_1\":0,\"lipstick_4\":0,\"bproof_2\":0,\"hair_color_1\":0,\"decals_2\":0,\"pants_2\":4,\"age_2\":0,\"glasses_2\":0,\"ears_2\":0,\"arms\":11,\"lipstick_1\":0,\"ears_1\":-1,\"mask_2\":0,\"sex\":0,\"lipstick_3\":0,\"helmet_1\":-1,\"shoes_2\":0,\"beard_2\":0,\"beard_1\":0,\"lipstick_2\":0,\"beard_4\":0,\"glasses_1\":0,\"bproof_1\":0,\"mask_1\":0,\"decals_1\":0,\"hair_1\":0,\"eyebrows_2\":0,\"beard_3\":0,\"age_1\":0,\"tshirt_2\":0,\"skin\":0,\"torso_2\":0,\"eyebrows_1\":0,\"face\":0,\"shoes_1\":10,\"pants_1\":24}', '{\"hair_2\":0,\"hair_color_2\":0,\"torso_1\":57,\"bags_1\":0,\"helmet_2\":0,\"chain_2\":0,\"eyebrows_3\":0,\"makeup_3\":0,\"makeup_2\":0,\"tshirt_1\":38,\"makeup_1\":0,\"bags_2\":0,\"makeup_4\":0,\"eyebrows_4\":0,\"chain_1\":0,\"lipstick_4\":0,\"bproof_2\":0,\"hair_color_1\":0,\"decals_2\":0,\"pants_2\":1,\"age_2\":0,\"glasses_2\":0,\"ears_2\":0,\"arms\":21,\"lipstick_1\":0,\"ears_1\":-1,\"mask_2\":0,\"sex\":1,\"lipstick_3\":0,\"helmet_1\":-1,\"shoes_2\":0,\"beard_2\":0,\"beard_1\":0,\"lipstick_2\":0,\"beard_4\":0,\"glasses_1\":5,\"bproof_1\":0,\"mask_1\":0,\"decals_1\":1,\"hair_1\":0,\"eyebrows_2\":0,\"beard_3\":0,\"age_1\":0,\"tshirt_2\":0,\"skin\":0,\"torso_2\":0,\"eyebrows_1\":0,\"face\":0,\"shoes_1\":49,\"pants_1\":11}'),
-(1034, 'taxi', 4, 'boss', 'Jefe', 0, '{\"hair_2\":0,\"hair_color_2\":0,\"torso_1\":29,\"bags_1\":0,\"helmet_2\":0,\"chain_2\":0,\"eyebrows_3\":0,\"makeup_3\":0,\"makeup_2\":0,\"tshirt_1\":31,\"makeup_1\":0,\"bags_2\":0,\"makeup_4\":0,\"eyebrows_4\":0,\"chain_1\":0,\"lipstick_4\":0,\"bproof_2\":0,\"hair_color_1\":0,\"decals_2\":0,\"pants_2\":4,\"age_2\":0,\"glasses_2\":0,\"ears_2\":0,\"arms\":1,\"lipstick_1\":0,\"ears_1\":-1,\"mask_2\":0,\"sex\":0,\"lipstick_3\":0,\"helmet_1\":-1,\"shoes_2\":0,\"beard_2\":0,\"beard_1\":0,\"lipstick_2\":0,\"beard_4\":0,\"glasses_1\":0,\"bproof_1\":0,\"mask_1\":0,\"decals_1\":0,\"hair_1\":0,\"eyebrows_2\":0,\"beard_3\":0,\"age_1\":0,\"tshirt_2\":0,\"skin\":0,\"torso_2\":4,\"eyebrows_1\":0,\"face\":0,\"shoes_1\":10,\"pants_1\":24}', '{\"hair_2\":0,\"hair_color_2\":0,\"torso_1\":57,\"bags_1\":0,\"helmet_2\":0,\"chain_2\":0,\"eyebrows_3\":0,\"makeup_3\":0,\"makeup_2\":0,\"tshirt_1\":38,\"makeup_1\":0,\"bags_2\":0,\"makeup_4\":0,\"eyebrows_4\":0,\"chain_1\":0,\"lipstick_4\":0,\"bproof_2\":0,\"hair_color_1\":0,\"decals_2\":0,\"pants_2\":1,\"age_2\":0,\"glasses_2\":0,\"ears_2\":0,\"arms\":21,\"lipstick_1\":0,\"ears_1\":-1,\"mask_2\":0,\"sex\":1,\"lipstick_3\":0,\"helmet_1\":-1,\"shoes_2\":0,\"beard_2\":0,\"beard_1\":0,\"lipstick_2\":0,\"beard_4\":0,\"glasses_1\":5,\"bproof_1\":0,\"mask_1\":0,\"decals_1\":1,\"hair_1\":0,\"eyebrows_2\":0,\"beard_3\":0,\"age_1\":0,\"tshirt_2\":0,\"skin\":0,\"torso_2\":0,\"eyebrows_1\":0,\"face\":0,\"shoes_1\":49,\"pants_1\":11}'),
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `licenses`
---
+(1034, 'taxi', 4, 'boss', 'Jefe', 0, '{\"hair_2\":0,\"hair_color_2\":0,\"torso_1\":29,\"bags_1\":0,\"helmet_2\":0,\"chain_2\":0,\"eyebrows_3\":0,\"makeup_3\":0,\"makeup_2\":0,\"tshirt_1\":31,\"makeup_1\":0,\"bags_2\":0,\"makeup_4\":0,\"eyebrows_4\":0,\"chain_1\":0,\"lipstick_4\":0,\"bproof_2\":0,\"hair_color_1\":0,\"decals_2\":0,\"pants_2\":4,\"age_2\":0,\"glasses_2\":0,\"ears_2\":0,\"arms\":1,\"lipstick_1\":0,\"ears_1\":-1,\"mask_2\":0,\"sex\":0,\"lipstick_3\":0,\"helmet_1\":-1,\"shoes_2\":0,\"beard_2\":0,\"beard_1\":0,\"lipstick_2\":0,\"beard_4\":0,\"glasses_1\":0,\"bproof_1\":0,\"mask_1\":0,\"decals_1\":0,\"hair_1\":0,\"eyebrows_2\":0,\"beard_3\":0,\"age_1\":0,\"tshirt_2\":0,\"skin\":0,\"torso_2\":4,\"eyebrows_1\":0,\"face\":0,\"shoes_1\":10,\"pants_1\":24}', '{\"hair_2\":0,\"hair_color_2\":0,\"torso_1\":57,\"bags_1\":0,\"helmet_2\":0,\"chain_2\":0,\"eyebrows_3\":0,\"makeup_3\":0,\"makeup_2\":0,\"tshirt_1\":38,\"makeup_1\":0,\"bags_2\":0,\"makeup_4\":0,\"eyebrows_4\":0,\"chain_1\":0,\"lipstick_4\":0,\"bproof_2\":0,\"hair_color_1\":0,\"decals_2\":0,\"pants_2\":1,\"age_2\":0,\"glasses_2\":0,\"ears_2\":0,\"arms\":21,\"lipstick_1\":0,\"ears_1\":-1,\"mask_2\":0,\"sex\":1,\"lipstick_3\":0,\"helmet_1\":-1,\"shoes_2\":0,\"beard_2\":0,\"beard_1\":0,\"lipstick_2\":0,\"beard_4\":0,\"glasses_1\":5,\"bproof_1\":0,\"mask_1\":0,\"decals_1\":1,\"hair_1\":0,\"eyebrows_2\":0,\"beard_3\":0,\"age_1\":0,\"tshirt_2\":0,\"skin\":0,\"torso_2\":0,\"eyebrows_1\":0,\"face\":0,\"shoes_1\":49,\"pants_1\":11}');
 
 CREATE TABLE `licenses` (
   `type` varchar(60) NOT NULL,
   `label` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
---
--- Volcado de datos para la tabla `licenses`
---
-
 INSERT INTO `licenses` (`type`, `label`) VALUES
 ('dmv', 'Carnet de Conducir');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `owned_vehicles`
---
 
 CREATE TABLE `owned_vehicles` (
   `vehicle` longtext NOT NULL,
@@ -566,24 +378,12 @@ CREATE TABLE `owned_vehicles` (
   `job` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `phone_app_chat`
---
-
 CREATE TABLE `phone_app_chat` (
   `id` int(11) NOT NULL,
   `channel` varchar(20) NOT NULL,
   `message` varchar(255) NOT NULL,
   `time` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `phone_calls`
---
 
 CREATE TABLE `phone_calls` (
   `id` int(11) NOT NULL,
@@ -593,12 +393,6 @@ CREATE TABLE `phone_calls` (
   `time` timestamp NOT NULL DEFAULT current_timestamp(),
   `accepts` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `phone_messages`
---
 
 CREATE TABLE `phone_messages` (
   `id` int(11) NOT NULL,
@@ -610,24 +404,12 @@ CREATE TABLE `phone_messages` (
   `owner` int(11) NOT NULL DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `phone_users_contacts`
---
-
 CREATE TABLE `phone_users_contacts` (
   `id` int(11) NOT NULL,
   `identifier` varchar(60) CHARACTER SET utf8mb4 DEFAULT NULL,
   `number` varchar(10) CHARACTER SET utf8mb4 DEFAULT NULL,
   `display` varchar(64) CHARACTER SET utf8mb4 NOT NULL DEFAULT '-1'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `playerhousing`
---
 
 CREATE TABLE `playerhousing` (
   `id` int(32) NOT NULL,
@@ -636,12 +418,6 @@ CREATE TABLE `playerhousing` (
   `price` int(32) DEFAULT NULL,
   `wardrobe` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `rented_vehicles`
---
 
 CREATE TABLE `rented_vehicles` (
   `vehicle` varchar(60) NOT NULL,
@@ -652,11 +428,6 @@ CREATE TABLE `rented_vehicles` (
   `owner` varchar(22) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `society_moneywash`
---
 
 CREATE TABLE `society_moneywash` (
   `id` int(11) NOT NULL,
@@ -665,24 +436,12 @@ CREATE TABLE `society_moneywash` (
   `amount` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `trunk_inventory`
---
-
 CREATE TABLE `trunk_inventory` (
   `id` int(11) NOT NULL,
   `plate` varchar(8) NOT NULL,
   `data` text NOT NULL,
   `owned` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `twitter_accounts`
---
 
 CREATE TABLE `twitter_accounts` (
   `id` int(11) NOT NULL,
@@ -691,23 +450,11 @@ CREATE TABLE `twitter_accounts` (
   `avatar_url` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `twitter_likes`
---
-
 CREATE TABLE `twitter_likes` (
   `id` int(11) NOT NULL,
   `authorId` int(11) DEFAULT NULL,
   `tweetId` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `twitter_tweets`
---
 
 CREATE TABLE `twitter_tweets` (
   `id` int(11) NOT NULL,
@@ -717,12 +464,6 @@ CREATE TABLE `twitter_tweets` (
   `time` timestamp NOT NULL DEFAULT current_timestamp(),
   `likes` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `users`
---
 
 CREATE TABLE `users` (
   `identifier` varchar(40) NOT NULL,
@@ -755,23 +496,11 @@ CREATE TABLE `users` (
   `skills` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `user_licenses`
---
-
 CREATE TABLE `user_licenses` (
   `id` int(11) NOT NULL,
   `type` varchar(60) NOT NULL,
   `owner` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `vehicles`
---
 
 CREATE TABLE `vehicles` (
   `name` varchar(60) NOT NULL,
@@ -779,10 +508,6 @@ CREATE TABLE `vehicles` (
   `price` int(11) NOT NULL,
   `category` varchar(60) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
-
---
--- Volcado de datos para la tabla `vehicles`
---
 
 INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 ('Adder', 'adder', 900000, 'super'),
@@ -1026,38 +751,18 @@ INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 ('Zombie Luxuary', 'zombieb', 12000, 'motorcycles'),
 ('Z-Type', 'ztype', 220000, 'sportsclassics');
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `vehiclevip_categories`
---
-
 CREATE TABLE `vehiclevip_categories` (
   `name` varchar(60) NOT NULL,
   `label` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
---
--- Volcado de datos para la tabla `vehiclevip_categories`
---
-
 INSERT INTO `vehiclevip_categories` (`name`, `label`) VALUES
 ('vip', 'VIP');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `vehicle_categories`
---
 
 CREATE TABLE `vehicle_categories` (
   `name` varchar(60) NOT NULL,
   `label` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
-
---
--- Volcado de datos para la tabla `vehicle_categories`
---
 
 INSERT INTO `vehicle_categories` (`name`, `label`) VALUES
 ('compacts', 'Compactos'),
@@ -1072,12 +777,6 @@ INSERT INTO `vehicle_categories` (`name`, `label`) VALUES
 ('suvs', 'SUVs'),
 ('vans', 'Furgonas');
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `vipvehicles`
---
-
 CREATE TABLE `vipvehicles` (
   `name` varchar(60) NOT NULL,
   `model` varchar(60) NOT NULL,
@@ -1085,424 +784,205 @@ CREATE TABLE `vipvehicles` (
   `category` varchar(60) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
---
--- Volcado de datos para la tabla `vipvehicles`
---
-
 INSERT INTO `vipvehicles` (`name`, `model`, `price`, `category`) VALUES
 ('ZentornoVIP', 'zentorno', 1000000, 'vip');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `whitelist`
---
 
 CREATE TABLE `whitelist` (
   `identifier` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `whitelist`
---
-
 INSERT INTO `whitelist` (`identifier`) VALUES
 ('dc152b1b20e2cd63ab687fc7d4db0df65ee12a24'),
 ('f56602641550fd9ba400d15f19635864a378fce4');
 
--- --------------------------------------------------------
---
--- Indices de la tabla `addon_account`
---
 ALTER TABLE `addon_account`
   ADD PRIMARY KEY (`name`) USING BTREE;
 
---
--- Indices de la tabla `addon_account_data`
---
 ALTER TABLE `addon_account_data`
   ADD PRIMARY KEY (`id`) USING BTREE,
   ADD UNIQUE KEY `index_addon_account_data_account_name_owner` (`account_name`,`owner`) USING BTREE,
   ADD KEY `index_addon_account_data_account_name` (`account_name`) USING BTREE;
 
---
--- Indices de la tabla `addon_inventory`
---
 ALTER TABLE `addon_inventory`
   ADD PRIMARY KEY (`name`) USING BTREE;
 
---
--- Indices de la tabla `addon_inventory_items`
---
 ALTER TABLE `addon_inventory_items`
   ADD PRIMARY KEY (`id`) USING BTREE,
   ADD KEY `index_addon_inventory_items_inventory_name_name` (`inventory_name`,`name`) USING BTREE,
   ADD KEY `index_addon_inventory_items_inventory_name_name_owner` (`inventory_name`,`name`,`owner`) USING BTREE,
   ADD KEY `index_addon_inventory_inventory_name` (`inventory_name`) USING BTREE;
 
---
--- Indices de la tabla `billing`
---
 ALTER TABLE `billing`
   ADD PRIMARY KEY (`id`) USING BTREE;
 
---
--- Indices de la tabla `bought_houses`
---
 ALTER TABLE `bought_houses`
   ADD PRIMARY KEY (`houseid`);
 
---
--- Indices de la tabla `characters_motels`
---
 ALTER TABLE `characters_motels`
   ADD PRIMARY KEY (`userIdentifier`);
 
---
--- Indices de la tabla `characters_storages`
---
 ALTER TABLE `characters_storages`
   ADD PRIMARY KEY (`storageId`) USING BTREE;
 
---
--- Indices de la tabla `criminal_records`
---
 ALTER TABLE `criminal_records`
   ADD PRIMARY KEY (`id`) USING BTREE,
   ADD UNIQUE KEY `id` (`id`) USING BTREE;
 
---
--- Indices de la tabla `datastore`
---
 ALTER TABLE `datastore`
   ADD PRIMARY KEY (`name`) USING BTREE;
 
---
--- Indices de la tabla `datastore_data`
---
 ALTER TABLE `datastore_data`
   ADD PRIMARY KEY (`id`) USING BTREE,
   ADD UNIQUE KEY `index_datastore_data_name_owner` (`name`,`owner`) USING BTREE,
   ADD KEY `index_datastore_data_name` (`name`) USING BTREE;
 
---
--- Indices de la tabla `epc_bolos`
---
 ALTER TABLE `epc_bolos`
   ADD PRIMARY KEY (`id`) USING BTREE,
   ADD UNIQUE KEY `id` (`id`) USING BTREE;
 
---
--- Indices de la tabla `epc_notes`
---
 ALTER TABLE `epc_notes`
   ADD PRIMARY KEY (`id`) USING BTREE,
   ADD UNIQUE KEY `id` (`id`) USING BTREE;
 
---
--- Indices de la tabla `fine_types`
---
 ALTER TABLE `fine_types`
   ADD PRIMARY KEY (`id`);
 
---
--- Indices de la tabla `items`
---
 ALTER TABLE `items`
   ADD PRIMARY KEY (`name`) USING BTREE;
 
---
--- Indices de la tabla `jobs`
---
 ALTER TABLE `jobs`
   ADD PRIMARY KEY (`name`) USING BTREE;
 
---
--- Indices de la tabla `job_grades`
---
 ALTER TABLE `job_grades`
   ADD PRIMARY KEY (`id`) USING BTREE;
 
---
--- Indices de la tabla `licenses`
---
 ALTER TABLE `licenses`
   ADD PRIMARY KEY (`type`) USING BTREE;
 
---
--- Indices de la tabla `owned_vehicles`
---
 ALTER TABLE `owned_vehicles`
   ADD PRIMARY KEY (`plate`) USING BTREE,
   ADD KEY `vehsowned` (`owner`) USING BTREE;
 
---
--- Indices de la tabla `phone_app_chat`
---
 ALTER TABLE `phone_app_chat`
   ADD PRIMARY KEY (`id`);
 
---
--- Indices de la tabla `phone_calls`
---
 ALTER TABLE `phone_calls`
   ADD PRIMARY KEY (`id`);
 
---
--- Indices de la tabla `phone_messages`
---
 ALTER TABLE `phone_messages`
   ADD PRIMARY KEY (`id`);
 
---
--- Indices de la tabla `phone_users_contacts`
---
 ALTER TABLE `phone_users_contacts`
   ADD PRIMARY KEY (`id`);
 
---
--- Indices de la tabla `playerhousing`
---
 ALTER TABLE `playerhousing`
   ADD PRIMARY KEY (`id`);
 
---
--- Indices de la tabla `rented_vehicles`
---
 ALTER TABLE `rented_vehicles`
   ADD PRIMARY KEY (`plate`) USING BTREE;
 
---
--- Indices de la tabla `society_moneywash`
---
 ALTER TABLE `society_moneywash`
   ADD PRIMARY KEY (`id`) USING BTREE;
 
---
--- Indices de la tabla `trunk_inventory`
---
 ALTER TABLE `trunk_inventory`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `plate` (`plate`);
 
---
--- Indices de la tabla `twitter_accounts`
---
 ALTER TABLE `twitter_accounts`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`);
 
---
--- Indices de la tabla `twitter_likes`
---
 ALTER TABLE `twitter_likes`
   ADD PRIMARY KEY (`id`),
   ADD KEY `FK_twitter_likes_twitter_accounts` (`authorId`),
   ADD KEY `FK_twitter_likes_twitter_tweets` (`tweetId`);
 
---
--- Indices de la tabla `twitter_tweets`
---
 ALTER TABLE `twitter_tweets`
   ADD PRIMARY KEY (`id`),
   ADD KEY `FK_twitter_tweets_twitter_accounts` (`authorId`);
 
---
--- Indices de la tabla `users`
---
 ALTER TABLE `users`
   ADD PRIMARY KEY (`identifier`) USING BTREE;
 
---
--- Indices de la tabla `user_licenses`
---
 ALTER TABLE `user_licenses`
   ADD PRIMARY KEY (`id`) USING BTREE;
 
---
--- Indices de la tabla `vehicles`
---
 ALTER TABLE `vehicles`
   ADD PRIMARY KEY (`model`) USING BTREE;
 
---
--- Indices de la tabla `vehiclevip_categories`
---
 ALTER TABLE `vehiclevip_categories`
   ADD PRIMARY KEY (`name`) USING BTREE;
 
---
--- Indices de la tabla `vehicle_categories`
---
 ALTER TABLE `vehicle_categories`
   ADD PRIMARY KEY (`name`) USING BTREE;
 
---
--- Indices de la tabla `vipvehicles`
---
 ALTER TABLE `vipvehicles`
   ADD PRIMARY KEY (`model`) USING BTREE;
 
---
--- Indices de la tabla `whitelist`
---
 ALTER TABLE `whitelist`
   ADD PRIMARY KEY (`identifier`);
 
---
--- Indices de la tabla `yisus_clubs`
---
-ALTER TABLE `yisus_clubs`
-  ADD PRIMARY KEY (`name`);
-
---
--- Indices de la tabla `yisus_clubs_ranks`
---
-ALTER TABLE `yisus_clubs_ranks`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `addon_account_data`
---
 ALTER TABLE `addon_account_data`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
---
--- AUTO_INCREMENT de la tabla `addon_inventory_items`
---
 ALTER TABLE `addon_inventory_items`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
---
--- AUTO_INCREMENT de la tabla `billing`
---
 ALTER TABLE `billing`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
---
--- AUTO_INCREMENT de la tabla `criminal_records`
---
 ALTER TABLE `criminal_records`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
---
--- AUTO_INCREMENT de la tabla `datastore_data`
---
 ALTER TABLE `datastore_data`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
---
--- AUTO_INCREMENT de la tabla `epc_bolos`
---
 ALTER TABLE `epc_bolos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
---
--- AUTO_INCREMENT de la tabla `epc_notes`
---
 ALTER TABLE `epc_notes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
---
--- AUTO_INCREMENT de la tabla `fine_types`
---
 ALTER TABLE `fine_types`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
---
--- AUTO_INCREMENT de la tabla `job_grades`
---
 ALTER TABLE `job_grades`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1047;
 
---
--- AUTO_INCREMENT de la tabla `phone_app_chat`
---
 ALTER TABLE `phone_app_chat`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
---
--- AUTO_INCREMENT de la tabla `phone_calls`
---
 ALTER TABLE `phone_calls`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
 
---
--- AUTO_INCREMENT de la tabla `phone_messages`
---
 ALTER TABLE `phone_messages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=156;
 
---
--- AUTO_INCREMENT de la tabla `phone_users_contacts`
---
 ALTER TABLE `phone_users_contacts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
---
--- AUTO_INCREMENT de la tabla `society_moneywash`
---
 ALTER TABLE `society_moneywash`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
---
--- AUTO_INCREMENT de la tabla `trunk_inventory`
---
 ALTER TABLE `trunk_inventory`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
---
--- AUTO_INCREMENT de la tabla `twitter_accounts`
---
 ALTER TABLE `twitter_accounts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
---
--- AUTO_INCREMENT de la tabla `twitter_likes`
---
 ALTER TABLE `twitter_likes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=138;
 
---
--- AUTO_INCREMENT de la tabla `twitter_tweets`
---
 ALTER TABLE `twitter_tweets`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=172;
 
---
--- AUTO_INCREMENT de la tabla `user_licenses`
---
 ALTER TABLE `user_licenses`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
---
--- AUTO_INCREMENT de la tabla `yisus_clubs_ranks`
---
-ALTER TABLE `yisus_clubs_ranks`
-  MODIFY `id` tinyint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `twitter_likes`
---
 ALTER TABLE `twitter_likes`
   ADD CONSTRAINT `FK_twitter_likes_twitter_accounts` FOREIGN KEY (`authorId`) REFERENCES `twitter_accounts` (`id`),
   ADD CONSTRAINT `FK_twitter_likes_twitter_tweets` FOREIGN KEY (`tweetId`) REFERENCES `twitter_tweets` (`id`) ON DELETE CASCADE;
 
---
--- Filtros para la tabla `twitter_tweets`
---
 ALTER TABLE `twitter_tweets`
   ADD CONSTRAINT `FK_twitter_tweets_twitter_accounts` FOREIGN KEY (`authorId`) REFERENCES `twitter_accounts` (`id`);
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
