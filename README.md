@@ -8,7 +8,7 @@ Por ello si necesitáis empezar en esto os dejo mi última BASE, es decir esto n
 En el INFO.txt tenéis comandos y como daros permisos etc...
 
 
-Esto es gratuito pero si necesitáis ayuda o cualquier script customizado os dejo mi discord, os adelante que no haré nada gratis visto lo visto: Yisus#6342
+Esto es gratuito pero si necesitáis ayuda (no voy a dar ningún tipo de soporte) o cualquier script customizado os dejo mi discord, os adelante que no haré nada gratis visto lo visto: Yisus#6342
 
 Que lo disfrutéis...
 
