@@ -11,3 +11,7 @@ En el INFO.txt tenéis comandos y como daros permisos etc...
 Esto es gratuito pero si necesitáis ayuda o cualquier script customizado os dejo mi discord, os adelante que no haré nada gratis visto lo visto: Yisus#6342
 
 Que lo disfrutéis...
+
+
+
+tags: esx, fivem, script, fivem script, lua, esx base, base fivem, fivem base
