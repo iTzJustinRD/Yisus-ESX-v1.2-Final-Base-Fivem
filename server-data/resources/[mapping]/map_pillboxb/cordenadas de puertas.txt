@@ -1,0 +1,43 @@
+objName = GetHashKey('v_ilev_cor_firedoor'),
+objCoords = vector3(333.7885, -593.4055, 28.80277),
+textCoords = vector3(334.1, -592.72, 29.3),
+
+objName = GetHashKey('v_ilev_cor_firedoor'),
+objCoords = vector3(334.5754, -591.2445, 28.80277),
+textCoords = vector3(334.37, -591.79, 29.3),
+
+objName = GetHashKey('v_ilev_cor_firedoorwide'),
+objCoords = vector3(337.2274, -584.0469, 28.81494),
+textCoords = vector3(337.5, -583.28, 29.3),
+
+objName = GetHashKey('v_ilev_cor_firedoor'),
+objCoords = vector3(341.392, -572.5071, 28.81897),
+textCoords = vector3(341.64, -571.85, 29.3),
+
+objName = GetHashKey('v_ilev_cor_firedoor'),
+objCoords = vector3(342.1784, -570.3473, 28.81897),
+textCoords = vector3(341.98, -571.01, 29.3),
+
+objName = GetHashKey('hei_prop_heist_cutscene_doorc_r'),
+objCoords = vector3(321.0088, -559.9609, 28.88031),
+textCoords = vector3(320.44, -560.28, 29.3),
+
+objName = GetHashKey('hei_prop_heist_cutscene_doorc_r'),
+objCoords = vector3(318.7677, -561.0198, 28.88031),
+textCoords = vector3(319.37, -560.71, 29.3),
+
+objName = GetHashKey('v_ilev_cor_firedoor'),
+objCoords = vector3(345.0586, -567.9648, 28.82051),
+textCoords = vector3(345.66, -568.26, 29.3),
+
+objName = GetHashKey('v_ilev_cor_firedoor'),
+objCoords = vector3(347.2267, -568.7333, 28.82051),
+textCoords = vector3(346.6, -568.48, 29.3),
+
+objName = GetHashKey('v_ilev_cor_firedoor'),
+objCoords = vector3(346.8181, -572.0256, 28.7973),
+textCoords = vector3(346.58, -572.58, 29.3),
+
+objName = GetHashKey('v_ilev_cor_firedoor'),
+objCoords = vector3(346.031, -574.1888, 28.7973),
+textCoords = vector3(346.26, -573.61, 29.3),

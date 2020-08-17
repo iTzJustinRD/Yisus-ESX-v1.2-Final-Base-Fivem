@@ -1,0 +1,20 @@
+Locales ['pl'] = {
+	['tattoo_shop_nearby'] = 'Naciśnij ~INPUT_PICKUP~ aby wejść do ~y~studia tatuażu~s~.',
+	['money_amount']       = '<span style = "color: green;"> $%s</span>',
+	['part']               = 'Część',
+	['go_back_to_menu']    = '< Cofnij',
+	['tattoo']             = 'Tatuaż',
+	['tattoos']            = 'Tatuaże',
+	['tattoo_shop']        = 'Salon tatuażu',
+	['bought_tattoo']      = 'Zrobiłeś ~y~tatuaż~s~ za ~r~$%s~s~',
+	['not_enough_money']   = 'Nie posiadasz ~r~wystarczającej ilości pieniędzy!~s~ \nPotrzebujesz ~r~$%s~s~',
+	['neck'] = 'Szyja / Twarz',
+	['back'] = 'Plecy',
+	['chest'] = 'Klatka',
+	['stomach'] = 'Brzuch',
+	['l_arm'] = 'Lewa ręka / Lewy bok',
+	['r_arm'] = 'Prawa ręka / Prawy bok',
+	['l_leg'] = 'Lewa noga',
+	['r_leg'] = 'Prawa noga',
+	['delete'] = 'Usuń wszystkie tatuaże (50000$)'
+}

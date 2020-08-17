@@ -1,0 +1,120 @@
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+
+<body>
+	<div class="full-screen">
+		<div class="question-container">
+			<!-- header -->
+			<div class="header">
+				<h1>Escuela de conducción</h1>
+			</div>
+			<!-- home -->
+			<div class="body home">
+				<div class="content">
+					<!-- ICI BREVE PRESENTATION -->
+					<center>
+						<img src="dmv.png" class="logo">
+						<br>
+						<p class="bold-text">Bienvenido a la escuela de conducción
+					</center>
+					<br>
+					<center>Todas las personas deberian de sacarse el carnet antes de conducir.
+						<br>Tomate tu tiempo y no respondas por responder, ya que muchos fallos te suspenderan.
+						<br>
+						<br> Test Teorico Seguridad Vial
+						<br> - El test tiene un coste de 1000 $. Si fallas no se devolvera el dinero.
+						<br> - No aceptamos tarjetas de credito, pero si es necesario podemos dejarte a deber algo de dinero.
+						<br> - Si fallas la primera vez no tendras que esperar, como se suele pedir al siguiente
+						dia.
+						<br>
+						<br> Test Practico Permiso B
+						<br> - El test practico tiene un coste de 3000 $, es como el test teorico pero con coche, si fallas no se devuelve el dinero.
+						<br> - asegurate de hacer las cosas bien y no fallar solo tienes 5 fallos!</p>
+					</center>
+				</div>
+				<div class="buttonspot">
+					<a href="#" class="button btnQuestion">Iniciar</a>
+				</div>
+				<div class="barre-progression">
+					<h2>Progreso</h2>
+					<progress class="progression" value="0" max="10">
+				</div>
+			</div>
+			<!-- Question-->
+			<div class="body questionnaire-container">
+				<div class="content">
+					<h2 id="questionNumero"></h2>
+					<p id="question"></p>
+					<form class="form" id="question-form">
+						<div>
+							<input type="radio" name="question" id="answerA" value="A">
+							<label class="answerA"></label>
+						</div>
+						<div>
+							<input type="radio" name="question" id="answerB" value="B">
+							<label class="answerB"></label>
+						</div>
+						<div>
+							<input type="radio" name="question" id="answerC" value="C">
+							<label class="answerC"></label>
+						</div>
+						<div>
+							<input type="radio" name="question" id="answerD" value="D">
+							<label class="answerD"></label>
+						</div>
+						<button type="submit" id="submit" class="submit">Siguiente pregunta</button>
+					</form>
+				</div>
+				<div class="barre-progression">
+					<h2>Progreso</h2>
+					<progress class="progression" value="0" max="10">
+				</div>
+			</div>
+			<!-- Results -->
+			<div class="body resultGood">
+				<div class="content">
+					<center>
+						<p class="bold-text">Buen Trabajo!</p>
+						<br>
+						<br>Lo hiciste bien durante el examen.
+						<br>
+						<br>Puedes cerrar esta ventana e ir a hacer el test practico.
+					</center>
+				</div>
+				<div class="buttonspot">
+					<a href="#" class="button btnClose">Cerrar</a>
+				</div>
+				<div class="barre-progression">
+					<h2>Progreso</h2>
+					<progress class="progression" value="10" max="10">
+				</div>
+			</div>
+			<div class="body resultBad">
+				<div class="content">
+					<center>
+						<p class="bold-text">Has fallado!</p>
+						<br>
+						<br>No estabas listo para esta prueba, inténtalo de nuevo más tarde...
+						<br>
+						<br>
+					</center>
+				</div>
+				<div class="buttonspot">
+					<a href="#" class="button btnKick">Cerrar</a>
+				</div>
+				<div class="barre-progression">
+					<h2>Progreso</h2>
+					<progress class="progression" value="10" max="10">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+	<script src="questions.js" type="text/javascript"></script>
+	<script src="scripts.js" type="text/javascript"></script>
+	<script src="debounce.min.js" type="text/javascript"></script>
+
+</body>

@@ -1,0 +1,9 @@
+Config = {}
+Config.TrafficX 			= 255
+Config.PedestrianX 			= 455
+Config.ParkedX 				= 355
+Config.Divider 				= 1000
+Config.iPlayers				= 128
+Config.Static				= 1.95
+Config.Dispatch 			= false
+Config.Wanted				= true

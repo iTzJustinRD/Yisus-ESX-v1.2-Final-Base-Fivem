@@ -1,0 +1,73 @@
+F1 - TELEFONO
+F2 - INVENTARIO
+F3 - ANIMACIONES |||"." y "," reservadas para hotkeys de animaciones (radio u otras)
+F5 - MOSTRAR DNI Y LICENCIA(S)
+F6 - MENU DE TRABAJO
+F7 - FACTURACIÓN
+F9 - ?
+F10 - ?
+F11 - ?
+
+M - Maletero
+L - Cerrar/abrir coche
+PAGEDOWN | AVPAG --> IDs (mantener pulsado o tocar, no me acuerdo sorry).
+
+--[[ Intercambiables en Ajustes de teclas | FiveM --]]
+Z - Facepalm
+X - Levantar las manos | Cinturon
+H - Ragdoll
+G - Cruzar brazos
+
+/camilla --> tumbarse en la camilla del hospital
+/me
+/do
+/msg "id" "mensaje" - mensaje privado
+/f --> mensaje entre miembros de trabajo
+/a --> Ayuda (global)
+T --> mensaje --> ooc proximidad
+/report "mensaje" --> envia un reporte
+/entorno "entorno msg" --> enviar entorno
+
+/maletero --> Abre el maletero del vehículo
+/puerta (1, 2, 3, 4, 5, 6) --> abre y cierra las diferentes puertas que puede tener un vehículo
+/capo --> abre el capo
+/motor --> enciende/apaga motor (lo deja apagado o encendido)
+/conducir --> cambia al asiento del conductor
+
+TEMA INCAUTACIÓN: Se necesita a un mecánico o policia para recuperar un vehículo incautado.
+En el F6 de poli y mecanico el incautar incauta si el coche es de un player o borra si es de npc.
+
+ADMIN ACE'S
+FXSERVER ACE's (start, stop, refresh, ensure commands)
+establecido en server.cfg
+
+EASYADMIN CONFIG
+establecido en server.cfg
+
+YISUS ADMIN SYSTEM (TOOLS, NOCLIP, GOTO, BRING, FREEZE...)
+Establecido en config.cfg del script
+
+
+ADMIN SYSTEM COMMANDS
+/staff (chat staff)
+/admin --> muestra tu rango de staff
+/tpm --> teleport a un punto del mapa
+/coords --> printea las coordenadas en f8 y consola del servidor
+/players --> devuelve ids/nombre/grupo de todos los usuarios conectados
+/say "mensaje" --> enviar un anuncio a todos los jugadores
+/noclip --> activa el noclip
+/announce "mensaje" --> anuncio para todo el servidor
+/bring "id" --> traer al usuario de tal id
+/bringback "id" --> teletransporta ese usuario a donde estaba
+/goto "id" --> teletransportarse a esa id
+/goback "id" --> volver a donde estabas
+/kill "id" --> matar a esa id
+/freeze "id" --> freezear esa id
+/unfreeze "id" --> desfreezear esa id
+/reviveall --> revivir a todos
+/warn "id" --> advertir a esa id (a la de 3 autokick)
+
+
+
+SERVIDOR IMAGENES
+https://forum.cfx.re/t/how-to-screenshot-basic-create-image-upload-server-and-use-it-with-gcphone/1025133

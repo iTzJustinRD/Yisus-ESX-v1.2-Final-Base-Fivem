@@ -1,0 +1,20 @@
+Locales ['en'] = {
+	['tattoo_shop_nearby'] = 'Presiona ~INPUT_PICKUP~ para ~y~ver los tatuajes~s~.',
+	['money_amount']       = '<span style = "color: green;"> $%s</span>',
+	['part']               = 'Parte',
+	['go_back_to_menu']    = '< Atrás',
+	['tattoo']             = 'Tatuaje',
+	['tattoos']            = 'Tatuajes',
+	['tattoo_shop']        = 'Tatuajes',
+	['bought_tattoo']      = 'Te has hecho un ~y~tatuaje~s~ por ~r~$%s~s~',
+	['not_enough_money']   = 'No tienes ~r~suficiente dinero!~s~ Necesitas ~r~$%s~s~',
+	['neck'] = 'Cuello / Cara',
+	['back'] = 'Espalda',
+	['chest'] = 'Pecho',
+	['stomach'] = 'Estomago',
+	['l_arm'] = 'Brazo izquierdo / Parte izquierda',
+	['r_arm'] = 'Brazo derecho / Parte derecha',
+	['l_leg'] = 'Pierna izquierda',
+	['r_leg'] = 'Pierna derecha',
+	['delete'] = 'Laser en todo el cuerpo (50000$)'
+}

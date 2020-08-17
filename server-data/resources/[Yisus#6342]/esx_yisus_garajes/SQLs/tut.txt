@@ -1,0 +1,1 @@
+Borrar tabla owned_vehicles y reemplazar por la nueva.
